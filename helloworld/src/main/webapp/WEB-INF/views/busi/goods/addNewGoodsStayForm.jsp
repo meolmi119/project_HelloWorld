@@ -106,6 +106,32 @@ table {
 	border-radius:20px;
 	text-align:center;
 }
+
+/*버튼*/
+.button_style_add_form { /* 버튼 스타일 */
+	background-color: #9FCBF6; /* 배경색 */
+	border: 1px solid #0E256D; /* 테두리 */
+	cursor: pointer; /* 마우스 포인터 */
+	padding: 5px 10px 6px 7px; /* 패딩 */
+	border-radius: 10px;
+	
+	box-shadow: 3px 3px 3px #0E256D;
+	transition-duration: 0.3s;
+	width: auto;
+	height: auto;
+	margin: 0px;
+}
+.button_style_add_form:active {
+	margin-left: 5px;
+	margin-top: 5px;
+	box-shadow: none;
+}
+.button_style_add_form:focus {
+	background-color: #0E256D; /* 배경색 */
+	border: 1px solid #9FCBF6; /* 테두리 */
+	color: #9FCBF6; /* 글자색 */
+	box-shadow: 3px 3px 3px #0E256D;
+}
 </style>
 </head>
 <body>
@@ -141,7 +167,7 @@ table {
 	       <tr>
 	           <td>주소(도로명)</td>
 	           <td style="text-align:left;"><input type="text" id="goods_stay_roadAddress" name="goods_stay_roadAddress" class="textbox2" readonly />
-	           <input type="button" id="address_kakao" name="adress_button" value="주소 찾기"></td>
+	           <input type="button" id="address_kakao" name="adress_button" class="button_style_add_form" value="주소 찾기"></td>
 	       </tr>
 	       <tr>
 	           <td>우편번호</td>
@@ -187,9 +213,13 @@ table {
 	</table>
 	<table>
 		<tr>
-			<td><form action="#"><input type="button" value="메인 페이지"></form></td>
-			<td><input type="button" value="등록한 상품 리스트"></td>
-			<td><input type="button" value="등록하기" onClick="fn_add_new_goodsStay(this.form)"></td>
+			<td>
+				<a href="${contextPath }/main.do"><input type="button" class="button_style_add_form" value="메인페이지"></a>
+			</td>
+			<td>
+			<a href="${contextPath }/business/listAll.do"><input type="button" class="button_style_add_form" value="등록한 상품 리스트"></a>
+			</td>
+			<td><input type="button" class="button_style_add_form" value="등록하기" onClick="fn_add_new_goodsStay(this.form)"></td>
 		</tr>
 	</table>
 </form>
